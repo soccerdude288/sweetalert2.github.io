@@ -8,5 +8,5 @@
 
 ```sh
 yarn install
-gulp watch
+yarn run develop
 ```
