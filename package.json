@@ -3,11 +3,20 @@
   "repository": "sweetalert2/sweetalert2.github.io",
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.172",
+    "gatsby-link": "^1.6.35",
+    "gatsby-plugin-react-helmet": "^2.0.4",
+    "gatsby-plugin-sass": "^1.0.16",
+    "react-helmet": "^5.2.0"
+  },
   "devDependencies": {
-    "browser-sync": "^2.23.5",
-    "gulp": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-sass": "latest",
-    "gulp-sass-lint": "latest"
+    "prettier": "^1.10.2"
   }
 }
