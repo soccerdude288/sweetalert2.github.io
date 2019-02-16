@@ -12,7 +12,7 @@ window._native = (function () {
     }
 
     if (typeof e === 'undefined') return defaultOptions
-    Object.keys(defaultOptions).forEach(function (key, index) {
+    Object.keys(defaultOptions).forEach(function (key) {
       if (typeof e[key] === 'undefined') {
         e[key] = defaultOptions[key]
       }
@@ -93,7 +93,7 @@ window._native = (function () {
   var pixel = function (p, timestamp) {
     var c = ''
     if (p) {
-      p.split('||').forEach(function (pixel, index) {
+      p.split('||').forEach(function (pixel) {
         c += '<img src="' + pixel.replace('[timestamp]', timestamp) + '" style="display:none;" height="0" width="0" />'
       })
     }

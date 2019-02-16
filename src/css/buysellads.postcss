@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'colors.postcss';
 
 body {
   > .bsa-cpc {
@@ -35,7 +35,7 @@ body {
     font-weight: 500;
 
     &:hover {
-      color: $pastel-green;
+      color: var(--pastel-green);
       text-decoration: none;
     }
   }
@@ -53,9 +53,9 @@ body {
       top: -1px;
       left: -8px;
       padding: 2px 5px;
-      border: solid 1px $pastel-green;
+      border: solid 1px var(--pastel-green);
       border-radius: 2px;
-      color: $pastel-green;
+      color: var(--pastel-green);
       content: 'Sponsor';
       text-transform: uppercase;
       font-size: 10px;

@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); /* Open Sans font */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); /* Source Code Pro font */
 
-@import 'colors';
-
-@mixin retina-background($url, $type: png) {
-  background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
-  background-repeat: no-repeat;
-}
+@import 'colors.postcss';
 
 html,
 body {
@@ -15,9 +10,9 @@ body {
 }
 
 body {
-  background-color: $athens;
+  background-color: var(--athens);
   text-align: center;
-  color: $emperor;
+  color: var(--emperor);
   padding-bottom: 2em;
   @media all and (max-width: 768px) {
     padding-bottom: 0;
@@ -52,7 +47,7 @@ nav {
     display: flex;
     padding: .4em 1em;
     text-decoration: none !important;
-    border-bottom: 1px solid $porcelain;
+    border-bottom: 1px solid var(--porcelain);
     opacity: .7;
 
     &::before {
@@ -76,7 +71,7 @@ nav {
     font-size: 1.1em;
 
     .fa-heart-o {
-      color: $cinnabar;
+      color: var(--cinnabar);
     }
 
     .social-buttons {
@@ -91,11 +86,11 @@ nav {
       }
 
       .facebook-button {
-        color: $facebook;
+        color: var(--facebook);
       }
 
       .twitter-button {
-        color: $twitter;
+        color: var(--twitter);
       }
 
       > * {
@@ -128,7 +123,7 @@ header {
     display: block;
 
     a {
-      color: $curiousblue;
+      color: var(--curiousblue);
     }
   }
 }
@@ -156,7 +151,7 @@ header {
 
 h3 {
   font-size: 1.75em;
-  color: $dovegray;
+  color: var(--dovegray);
   text-transform: uppercase;
   margin-top: 6em;
   text-align: center;
@@ -164,7 +159,7 @@ h3 {
 
   &::before {
     content: '';
-    background-color: $porcelain;
+    background-color: var(--porcelain);
     height: .25em;
     width: 43.75rem;
     left: 50%;
@@ -184,7 +179,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: $cornflowerblue;
+  color: var(--cornflowerblue);
   font-weight: 600;
   cursor: pointer;
 
@@ -217,11 +212,8 @@ p {
 
 button,
 .button {
-  $btn-blue: #3085d6;
-  $btn-gray: #d0d0d0;
-
-  background-color: $btn-blue;
-  color: $white;
+  background-color: var(--btn-blue);
+  color: var(--white);
   border: 0;
   box-shadow: none;
   font-size: 1.125em;
@@ -232,13 +224,13 @@ button,
   white-space: nowrap;
 
   &:hover {
-    background-color: darken($btn-blue, 3%);
+    background-color: darken(var(--btn-blue), 3%);
   }
 
   &:focus {
     &:not(.swal2-close) {
       &:not(.btn) {
-        box-shadow: 0 0 0 .125em $athens, 0 0 0 .25em $chateaugray;
+        box-shadow: 0 0 0 .125em var(--athens), 0 0 0 .25em var(--chateaugray);
         outline: none;
       }
     }
@@ -249,18 +241,18 @@ button,
   }
 
   &:active {
-    background-color: darken($btn-blue, 10%);
+    background-color: darken(var(--btn-blue), 10%);
   }
 
   &.cancel {
-    background-color: $btn-gray;
+    background-color: var(--btn-gray);
 
     &:hover {
-      background-color: darken($btn-gray, 3%);
+      background-color: darken(var(--btn-gray), 3%);
     }
 
     &:active {
-      background-color: darken($btn-gray, 10%);
+      background-color: darken(var(--btn-gray), 10%);
     }
   }
 }
@@ -271,8 +263,8 @@ button,
 }
 
 pre {
-  color: lighten($black, 97);
-  background: $shark;
+  color: lighten(var(--black), 97);
+  background: var(--shark);
   text-align: left;
   position: relative;
   line-height: 1.2;
@@ -286,10 +278,10 @@ pre {
   }
 
   .comment {
-    color: $regentgray;
+    color: var(--regentgray);
 
     a {
-      color: $regentgray;
+      color: var(--regentgray);
       text-decoration: underline;
     }
   }
@@ -313,7 +305,7 @@ pre {
       right: .5em;
       padding-left: .8em;
       opacity: 0;
-      background: $black url('/images/codepen.svg') 11.6em .2em no-repeat;
+      background: var(--black) url('/images/codepen.svg') 11.6em .2em no-repeat;
       background-size: 1.6em;
       cursor: pointer;
       transition: top .2s ease-in-out, opacity .2s ease-in-out;
@@ -332,13 +324,13 @@ pre {
 }
 
 kbd {
-  border: 1px solid $regentgray;
+  border: 1px solid var(--regentgray);
   border-radius: .1875em;
   padding: 0 .125em;
 }
 
 .showcase {
-  background-color: $porcelain;
+  background-color: var(--porcelain);
   margin-top: .9em;
   padding: 1.25em;
   display: inline-block;
@@ -360,7 +352,7 @@ kbd {
 
   h4 {
     font-size: 1em;
-    color: lighten($black, 70);
+    color: lighten(var(--black), 70);
     line-height: 1.375em;
     margin: 0 auto;
     font-weight: 800;
@@ -379,7 +371,8 @@ kbd {
   }
 
   .vs-icon {
-    @include retina-background('vs_icon');
+    background-image: image-set(url('/images/vs_icon.png') 1x, url('/images/vs_icon@2x.png') 2x);
+    background-repeat: no-repeat;
     width: 4.3125em;
     height: 4.3125em;
     position: absolute;
@@ -461,7 +454,7 @@ ol {
   padding-left: 0;
 
   li {
-    color: $chateaugray;
+    color: var(--chateaugray);
 
     p {
       margin-bottom: .625em;
@@ -481,9 +474,9 @@ table {
   }
 
   th {
-    background-color: $white;
+    background-color: var(--white);
     padding: .625em 1.25em;
-    color: $dovegray;
+    color: var(--dovegray);
     font-weight: 400;
     position: relative;
     white-space: nowrap;
