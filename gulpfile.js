@@ -5,10 +5,10 @@ const browserSync = require('browser-sync').create()
 const webpackStream = require('webpack-stream')
 
 const styles = [
-  'sweetalert2.github.io/styles/styles.scss',
-  'sweetalert2.github.io/styles/buysellads.scss',
-  'sweetalert2.github.io/styles/carbon-ads.scss',
-  'sweetalert2.github.io/styles/native-js.scss'
+  'styles/styles.scss',
+  'styles/buysellads.scss',
+  'styles/carbon-ads.scss',
+  'styles/native-js.scss'
 ]
 
 gulp.task('bundle', () => {
