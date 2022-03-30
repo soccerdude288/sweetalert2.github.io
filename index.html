@@ -69,7 +69,7 @@
     <a href="/#nsfw-sponsors"><span>NSFW Sponsors</span></a>
 
     <div class="theme-selector">
-      <label>Theme:
+      Theme:
       <select id="theme" autocomplete="off">
         <option value="//cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css" selected>Default</option>
         <option value="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css">Dark</option>
@@ -79,16 +79,18 @@
         <option value="//cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css">Borderless</option>
         <option value="//cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">Material UI</option>
         <option value="//cdn.jsdelivr.net/npm/@sweetalert2/theme-wordpress-admin/wordpress-admin.css">WordPress Admin</option>
-      </select></label>
+      </select>
     </div>
 
     <div class="version-selector mobile-hidden">
-      <label>Version:
+      Version:
       <select id="version">
         <option value="11.x" selected>v11.x</option>
         <option value="10.x">v10.x</option>
         <option value="9.x">v9.x</option>
-      </select></label>
+        <option value="8.x">v8.x</option>
+        <option value="7.x">v7.x</option>
+      </select>
     </div>
   </nav>
 
@@ -145,7 +147,7 @@
       </div>
     </div>
     <div>
-      <img id="logo-text" src="./images/SweetAlert2.png" alt="SweetAlert2">
+      <img id="logo-text" src="./images/SweetAlert2.png">
     </div>
     <div class="social-buttons">
       <!-- GitHub Sponsors -->
@@ -193,7 +195,7 @@
   </script>
 
   <div class="showcase normal">
-    <div class="normal-alert">Normal alert</div>
+    <h4>Normal alert</h4>
     <button onclick="executeExample('normalAlert')">
       Show normal alert
     </button>
@@ -207,6 +209,14 @@
       Show success message
     </button>
     <pre data-example-id="sweetAlert"></pre>
+  </div>
+
+  <div class="center-container">
+    <a href="https://github.com/sponsors/limonte" class="ultimate-sponsor-placeholder" target="_blank">
+      <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">
+      <div>Become the Ultimate Sponsor of SweetAlert2 and place your banner here <br> (100K+ unique visitors per month!)</div>
+      <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png">
+    </a>
   </div>
 
   <div class="center-container">
@@ -271,7 +281,7 @@
     <li id="three-buttons">
       <div class="ui">
         <p>A dialog with three buttons</p>
-        <button class="show-example-btn" aria-label="Try me! Example: A dialog with three buttons" onclick="executeExample('threeButtons')">
+        <button class="show-example-btn" aria-label="Try me! Example: A custom positioned dialog" onclick="executeExample('threeButtons')">
           Try me!
         </button>
       </div>
@@ -300,8 +310,8 @@
 
     <li id="confirm-dialog">
       <div class="ui">
-        <p>A confirm dialog, with a function attached to the "Confirm"-button</p>
-        <button class="show-example-btn" aria-label="Try me! Example: A confirm dialog, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
+        <p>A confirm dialog, with a function attached to the "Confirm"-button...</p>
+        <button class="show-example-btn" aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
           Try me!
         </button>
       </div>
@@ -310,7 +320,7 @@
 
     <li id="dismiss-handle">
       <div class="ui">
-        <p>... and by passing a parameter, you can execute something else for "Cancel"</p>
+        <p>... and by passing a parameter, you can execute something else for "Cancel".</p>
         <button class="show-example-btn" aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'" onclick="executeExample('handleDismiss')">
           Try me!
         </button>
@@ -351,7 +361,7 @@
     <li id="rtl">
       <div class="ui">
         <p>Right-to-left support for Arabic, Persian, Hebrew, and other RTL languages</p>
-        <button class="show-example-btn" aria-label="Try me! Example: A message in Arabic" onclick="executeExample('rtl')">
+        <button class="show-example-btn" aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('rtl')">
           Try me!
         </button>
       </div>
@@ -459,63 +469,59 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="title">
         <td>
-          <h4>title</h4><br>
+          <b>title</b><br>
           <i>''</i>
         </td>
         <td>The title of the popup, as HTML.</td>
       </tr>
       <tr id="titleText">
         <td>
-          <h4>titleText</h4><br>
+          <b>titleText</b><br>
           <i>''</i>
         </td>
         <td>The title of the popup, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr id="html">
         <td>
-          <h4>html</h4><br>
+          <b>html</b><br>
           <i>''</i>
         </td>
         <td>
-          A HTML description for the popup.<br>
-          If <strong>text</strong> and <strong>html</strong> parameters are provided in the same time, <strong>html</strong> will be used.<br>
+          A HTML description for the popup.<br><br>
           [Security] SweetAlert2 does NOT sanitize this parameter. It is the developer's responsibility to escape any user input when using the <strong>html</strong> option, so XSS attacks would be prevented.
         </td>
       </tr>
       <tr id="text">
         <td>
-          <h4>text</h4><br>
+          <b>text</b><br>
           <i>''</i>
         </td>
-        <td>
-          A description for the popup.<br>
-          If <strong>text</strong> and <strong>html</strong> parameters are provided in the same time, <strong>html</strong> will be used.
-        </td>
+        <td>A description for the popup. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr id="icon">
         <td>
-          <h4>icon</h4><br>
+          <b>icon</b><br>
           <i>undefined</i>
         </td>
         <td>The icon of the popup. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
       </tr>
       <tr id="iconColor">
         <td>
-          <h4>iconColor</h4><br>
+          <b>iconColor</b><br>
           <i>undefined</i>
         </td>
         <td>Use this to change the color of the icon.</td>
       </tr>
       <tr id="iconHtml">
         <td>
-          <h4>iconHtml</h4><br>
+          <b>iconHtml</b><br>
           <i>undefined</i>
         </td>
         <td>The custom HTML content for an icon.</td>
       </tr>
       <tr id="showClass">
         <td>
-          <h4>showClass</h4><br>
+          <b>showClass</b><br>
           <i><pre><code>{
   popup: 'swal2-show',
   backdrop: 'swal2-backdrop-show',
@@ -526,7 +532,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="hideClass">
         <td>
-          <h4>hideClass</h4><br>
+          <b>hideClass</b><br>
           <i><pre><code>{
   popup: 'swal2-hide',
   backdrop: 'swal2-backdrop-hide',
@@ -538,35 +544,35 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="footer">
         <td>
-          <h4>footer</h4><br>
+          <b>footer</b><br>
           <i>''</i>
         </td>
         <td>The footer of the popup. Can be either plain text or HTML.</td>
       </tr>
       <tr id="backdrop">
         <td>
-          <h4>backdrop</h4><br>
+          <b>backdrop</b><br>
           <i>true</i>
         </td>
         <td>Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a <strong>boolean</strong> or a <strong>string</strong> which will be assigned to the CSS <strong>background</strong> property.</td>
       </tr>
       <tr id="toast">
         <td>
-          <h4>toast</h4><br>
+          <b>toast</b><br>
           <i>false</i>
         </td>
         <td>Whether or not an alert should be treated as a toast notification. This option is normally coupled with the <strong>position</strong> parameter and a timer. Toasts are NEVER autofocused.</td>
       </tr>
       <tr id="target">
         <td>
-          <h4>target</h4><br>
+          <b>target</b><br>
           <i>'body'</i>
         </td>
         <td>The container element for adding popup into.</td>
       </tr>
       <tr id="input">
         <td>
-          <h4>input</h4><br>
+          <b>input</b><br>
           <i>undefined</i>
         </td>
         <td>
@@ -579,49 +585,42 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="width">
         <td>
-          <h4>width</h4><br>
+          <b>width</b><br>
           <i>undefined</i>
         </td>
         <td>Popup window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
       </tr>
       <tr id="padding">
         <td>
-          <h4>padding</h4><br>
+          <b>padding</b><br>
           <i>undefined</i>
         </td>
         <td>Popup window padding. The default padding is <strong>1.25rem</strong>.</td>
       </tr>
-      <tr id="color">
-        <td>
-          <h4>color</h4><br>
-          <i>undefined</i>
-        </td>
-        <td>Color for title, content and footer (CSS <strong>color</strong> property). The default color is <strong>'#545454'</strong>.</td>
-      </tr>
       <tr id="background">
         <td>
-          <h4>background</h4><br>
+          <b>background</b><br>
           <i>undefined</i>
         </td>
         <td>Popup window background (CSS background property). The default background is <strong>'#fff'</strong>.</td>
       </tr>
       <tr id="position">
         <td>
-          <h4>position</h4><br>
+          <b>position</b><br>
           <i>'center'</i>
         </td>
         <td>Popup window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>, <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>, <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or <strong>'bottom-end'</strong>.</td>
       </tr>
       <tr id="grow">
         <td>
-          <h4>grow</h4><br>
+          <b>grow</b><br>
           <i>false</i>
         </td>
         <td>Paired with window position, sets the direction the popup should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
       <tr id="customClass">
         <td>
-          <h4>customClass</h4><br>
+          <b>customClass</b><br>
           <i>undefined</i>
         </td>
         <td>A custom CSS class for the popup:
@@ -643,245 +642,244 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   denyButton: '...',
   cancelButton: '...',
   loader: '...',
-  footer: '....',
-  timerProgressBar: '....',
+  footer: '....'
 }</code></pre>
         </td>
       </tr>
       <tr id="timer">
         <td>
-          <h4>timer</h4><br>
+          <b>timer</b><br>
           <i>undefined</i>
         </td>
         <td>Auto close timer of the popup. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr id="timerProgressBar">
         <td>
-          <h4>timerProgressBar</h4><br>
+          <b>timerProgressBar</b><br>
           <i>false</i>
         </td>
         <td>If set to true, the timer will have a progress bar at the bottom of a popup. Mostly, this feature is useful with toasts.</td>
       </tr>
       <tr id="heightAuto">
         <td>
-          <h4>heightAuto</h4><br>
+          <b>heightAuto</b><br>
           <i>true</i>
         </td>
         <td>By default, SweetAlert2 sets html's and body's CSS <strong>height</strong> to <strong>auto !important</strong>. If this behavior isn't compatible with your project's layout, set <strong>heightAuto</strong> to <strong>false</strong>.</td>
       </tr>
       <tr id="allowOutsideClick">
         <td>
-          <h4>allowOutsideClick</h4><br>
+          <b>allowOutsideClick</b><br>
           <i>true</i>
         </td>
         <td>If set to <strong>false</strong>, the user can't dismiss the popup by clicking outside it.<br>You can also pass a custom function returning a boolean value, e.g. if you want to disable outside clicks for the loading state of a popup.</td>
       </tr>
       <tr id="allowEscapeKey">
         <td>
-          <h4>allowEscapeKey</h4><br>
+          <b>allowEscapeKey</b><br>
           <i>true</i>
         </td>
         <td>If set to <strong>false</strong>, the user can't dismiss the popup by pressing the <kbd>Esc</kbd> key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the <kbd>Esc</kbd> key for the loading state of a popup.</td>
       </tr>
       <tr id="allowEnterKey">
         <td>
-          <h4>allowEnterKey</h4><br>
+          <b>allowEnterKey</b><br>
           <i>true</i>
         </td>
         <td>If set to <strong>false</strong>, the user can't confirm the popup by pressing the <kbd>Enter</kbd> or <kbd>Space</kbd> keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value.</td>
       </tr>
       <tr id="stopKeydownPropagation">
         <td>
-          <h4>stopKeydownPropagation</h4><br>
+          <b>stopKeydownPropagation</b><br>
           <i>true</i>
         </td>
         <td>If set to <strong>false</strong>, SweetAlert2 will allow <strong>keydown</strong> events propagation to the document.</td>
       </tr>
       <tr id="keydownListenerCapture">
         <td>
-          <h4>keydownListenerCapture</h4><br>
+          <b>keydownListenerCapture</b><br>
           <i>false</i>
         </td>
         <td>Useful for those who are using SweetAlert2 along with Bootstrap modals. By default <strong>keydownListenerCapture</strong> is <strong>false</strong> which means when a user hits <kbd>Esc</kbd>, both SweetAlert2 and Bootstrap modals will be closed. Set <strong>keydownListenerCapture</strong> to <strong>true</strong> to fix that behavior.</td>
       </tr>
       <tr id="showConfirmButton">
         <td>
-          <h4>showConfirmButton</h4><br>
+          <b>showConfirmButton</b><br>
           <i>true</i>
         </td>
         <td>If set to <strong>false</strong>, a "Confirm"-button will not be shown.</td>
       </tr>
       <tr id="showDenyButton">
         <td>
-          <h4>showDenyButton</h4><br>
+          <b>showDenyButton</b><br>
           <i>false</i>
         </td>
         <td>If set to <strong>true</strong>, a "Deny"-button will be shown. It can be useful when you want a popup with 3 buttons.</td>
       </tr>
       <tr id="showCancelButton">
         <td>
-          <h4>showCancelButton</h4><br>
+          <b>showCancelButton</b><br>
           <i>false</i>
         </td>
         <td>If set to <strong>true</strong>, a "Cancel"-button will be shown, which the user can click on to dismiss the modal.</td>
       </tr>
       <tr id="confirmButtonText">
         <td>
-          <h4>confirmButtonText</h4><br>
+          <b>confirmButtonText</b><br>
           <i>'OK'</i>
         </td>
         <td>Use this to change the text on the "Confirm"-button.</td>
       </tr>
       <tr id="denyButtonText">
         <td>
-          <h4>denyButtonText</h4><br>
+          <b>denyButtonText</b><br>
           <i>'No'</i>
         </td>
         <td>Use this to change the text on the "Deny"-button.</td>
       </tr>
       <tr id="cancelButtonText">
         <td>
-          <h4>cancelButtonText</h4><br>
+          <b>cancelButtonText</b><br>
           <i>'Cancel'</i>
         </td>
         <td>Use this to change the text on the "Cancel"-button.</td>
       </tr>
       <tr id="confirmButtonColor">
         <td>
-          <h4>confirmButtonColor</h4><br>
+          <b>confirmButtonColor</b><br>
           <i>undefined</i>
         </td>
         <td>Use this to change the background color of the "Confirm"-button. The default color is <strong>#3085d6</strong></td>
       </tr>
       <tr id="denyButtonColor">
         <td>
-          <h4>denyButtonColor</h4><br>
+          <b>denyButtonColor</b><br>
           <i>undefined</i>
         </td>
         <td>Use this to change the background color of the "Deny"-button. The default color is <strong>#dd6b55</strong></td>
       </tr>
       <tr id="cancelButtonColor">
         <td>
-          <h4>cancelButtonColor</h4><br>
+          <b>cancelButtonColor</b><br>
           <i>undefined</i>
         </td>
         <td>Use this to change the background color of the "Cancel"-button. The default color is <strong>#aaa</strong></td>
       </tr>
       <tr id="confirmButtonAriaLabel">
         <td>
-          <h4>confirmButtonAriaLabel</h4><br>
+          <b>confirmButtonAriaLabel</b><br>
           <i>''</i>
         </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Confirm"-button.</td>
       </tr>
       <tr id="denyButtonAriaLabel">
         <td>
-          <h4>denyButtonAriaLabel</h4><br>
+          <b>denyButtonAriaLabel</b><br>
           <i>''</i>
         </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Deny"-button.</td>
       </tr>
       <tr id="cancelButtonAriaLabel">
         <td>
-          <h4>cancelButtonAriaLabel</h4><br>
+          <b>cancelButtonAriaLabel</b><br>
           <i>''</i>
         </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Cancel"-button.</td>
       </tr>
       <tr id="buttonsStyling">
         <td>
-          <h4>buttonsStyling</h4><br>
+          <b>buttonsStyling</b><br>
           <i>true</i>
         </td>
         <td>Apply default styling to buttons. If you want to use your own classes (e.g. Bootstrap classes) set this parameter to <strong>false</strong>.</td>
       </tr>
       <tr id="reverseButtons">
         <td>
-          <h4>reverseButtons</h4><br>
+          <b>reverseButtons</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> if you want to invert default buttons positions ("Confirm"-button on the right side).</td>
       </tr>
       <tr id="focusConfirm">
         <td>
-          <h4>focusConfirm</h4><br>
+          <b>focusConfirm</b><br>
           <i>true</i>
         </td>
         <td>Set to <strong>false</strong> if you want to focus the first element in tab order instead of "Confirm"-button by default.</td>
       </tr>
       <tr id="returnFocus">
         <td>
-          <h4>returnFocus</h4><br>
+          <b>returnFocus</b><br>
           <i>true</i>
         </td>
         <td>Set to <strong>false</strong> if you don't want to return the focus to the element that invoked the modal after the modal is closed.</td>
       </tr>
       <tr id="focusDeny">
         <td>
-          <h4>focusDeny</h4><br>
+          <b>focusDeny</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> if you want to focus the "Deny"-button by default.</td>
       </tr>
       <tr id="focusCancel">
         <td>
-          <h4>focusCancel</h4><br>
+          <b>focusCancel</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> if you want to focus the "Cancel"-button by default.</td>
       </tr>
       <tr id="showCloseButton">
         <td>
-          <h4>showCloseButton</h4><br>
+          <b>showCloseButton</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> to show close button in top right corner of the popup.</td>
       </tr>
       <tr id="closeButtonHtml">
         <td>
-          <h4>closeButtonHtml</h4><br>
+          <b>closeButtonHtml</b><br>
           <i>'&amp;times;'</i>
         </td>
         <td>Use this to change the content of the close button.</td>
       </tr>
       <tr id="closeButtonAriaLabel">
         <td>
-          <h4>closeButtonAriaLabel</h4><br>
+          <b>closeButtonAriaLabel</b><br>
           <i>'Close this dialog'</i>
         </td>
         <td>Use this to change the <strong>aria-label</strong> for the close button.</td>
       </tr>
       <tr id="loaderHtml">
         <td>
-          <h4>loaderHtml</h4><br>
+          <b>loaderHtml</b><br>
           <i>''</i>
         </td>
         <td>Use this to change the HTML content of the loader.</td>
       </tr>
       <tr id="showLoaderOnConfirm">
         <td>
-          <h4>showLoaderOnConfirm</h4><br>
+          <b>showLoaderOnConfirm</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> to disable buttons and show the loader instead of the Confirm button. Use it in combination with the <a href="#preConfirm"><strong>preConfirm</strong></a> parameter.</td>
       </tr>
       <tr id="showLoaderOnDeny">
         <td>
-          <h4>showLoaderOnDeny</h4><br>
+          <b>showLoaderOnDeny</b><br>
           <i>false</i>
         </td>
         <td>Set to <strong>true</strong> to disable buttons and show the loader instead of the Deny button. Use it in combination with the <a href="#preDeny"><strong>preDeny</strong></a> parameter.</td>
       </tr>
       <tr id="scrollbarPadding">
         <td>
-          <h4>scrollbarPadding</h4><br>
+          <b>scrollbarPadding</b><br>
           <i>true</i>
         </td>
         <td>Set to <strong>false</strong> to disable body padding adjustment when the page scrollbar gets hidden while the popup is shown</td>
       </tr>
       <tr id="preConfirm">
         <td>
-          <h4>preConfirm</h4><br>
+          <b>preConfirm</b><br>
           <i>undefined</i>
         </td>
         <td>Function to execute before confirming, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
@@ -895,7 +893,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="preDeny">
         <td>
-          <h4>preDeny</h4><br>
+          <b>preDeny</b><br>
           <i>undefined</i>
         </td>
         <td>Function to execute before denying, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
@@ -908,7 +906,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="returnInputValueOnDeny">
         <td>
-          <h4>returnInputValueOnDeny</h4><br>
+          <b>returnInputValueOnDeny</b><br>
           <i>false</i>
         </td>
         <td>
@@ -918,82 +916,82 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="imageUrl">
         <td>
-          <h4>imageUrl</h4><br>
+          <b>imageUrl</b><br>
           <i>undefined</i>
         </td>
         <td>Add a customized icon for the popup. Should contain a string with the path or URL to the image.</td>
       </tr>
       <tr id="imageWidth">
         <td>
-          <h4>imageWidth</h4><br>
+          <b>imageWidth</b><br>
           <i>undefined</i>
         </td>
         <td>If imageUrl is set, you can specify imageWidth to describes image width in px.</td>
       </tr>
       <tr id="imageHeight">
         <td>
-          <h4>imageHeight</h4><br>
+          <b>imageHeight</b><br>
           <i>undefined</i>
         </td>
         <td>Custom image height in px.</td>
       </tr>
       <tr id="imageAlt">
         <td>
-          <h4>imageAlt</h4><br>
+          <b>imageAlt</b><br>
           <i>''</i>
         </td>
         <td>An alternative text for the custom image icon.</td>
       </tr>
       <tr id="inputLabel">
         <td>
-          <h4>inputLabel</h4><br>
+          <b>inputLabel</b><br>
           <i>''</i>
         </td>
         <td>Input field label.</td>
       </tr>
       <tr id="inputPlaceholder">
         <td>
-          <h4>inputPlaceholder</h4><br>
+          <b>inputPlaceholder</b><br>
           <i>''</i>
         </td>
         <td>Input field placeholder.</td>
       </tr>
       <tr id="inputValue">
         <td>
-          <h4>inputValue</h4><br>
+          <b>inputValue</b><br>
           <i>''</i>
         </td>
         <td>
           Input field initial value. <br><br>
-          If the input type is <h4>select</h4>, <h4>inputValue</h4> will represent the selected <h4>&lt;option&gt;</h4> tag. <br><br>
-          If the input type is <h4>checkbox</h4>, <h4>inputValue</h4> will represent the <h4>checked</h4> state. <br><br>
-          If the input type is <h4>text</h4>, <h4>email</h4>, <h4>number</h4>, <h4>tel</h4> or <h4>textarea</h4> a Promise can be accepted as <h4>inputValue</h4>.
+          If the input type is <b>select</b>, <b>inputValue</b> will represent the selected <b>&lt;option&gt;</b> tag. <br><br>
+          If the input type is <b>checkbox</b>, <b>inputValue</b> will represent the <b>checked</b> state. <br><br>
+          If the input type is <b>text</b>, <b>email</b>, <b>number</b>, <b>tel</b> or <b>textarea</b> a Promise can be accepted as <b>inputValue</b>.
         </td>
       </tr>
       <tr id="inputOptions">
         <td>
-          <h4>inputOptions</h4><br>
+          <b>inputOptions</b><br>
           <i>{}</i>
         </td>
         <td>If <strong>input</strong> parameter is set to <strong>"select"</strong> or <strong>"radio"</strong>, you can provide options. Can be a Map or a plain object, with keys that represent option values and values that represent option text. You can also provide plain object or Map as values that will represented a group of options, being the label of this <strong>&lt;optgroup&gt;</strong> the key. Finally, you can also provide a Promise that resolves with one of those types. </td>
       </tr>
       <tr id="inputAutoTrim">
         <td>
-          <h4>inputAutoTrim</h4><br>
+          <b>inputAutoTrim</b><br>
           <i>true</i>
         </td>
         <td>Automatically remove whitespaces from both ends of a result string. Set this parameter to <strong>false</strong> to disable auto-trimming.</td>
       </tr>
       <tr id="inputAttributes">
         <td>
-          <h4>inputAttributes</h4><br>
+          <b>inputAttributes</b><br>
           <i>{}</i>
         </td>
         <td>HTML input attributes (e.g. <strong>min</strong>, <strong>max</strong>, <strong>autocomplete</strong>, <strong>accept</strong>), that are added to the input field. Object keys will represent attributes names, object values will represent attributes values.</td>
       </tr>
       <tr id="inputValidator">
         <td>
-          <h4>inputValidator</h4><br>
+          <b>inputValidator</b><br>
           <i>undefined</i>
         </td>
         <td>Validator for input field, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
@@ -1006,49 +1004,49 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="validationMessage">
         <td>
-          <h4>validationMessage</h4><br>
+          <b>validationMessage</b><br>
           <i>undefined</i>
         </td>
         <td>A custom validation message for default validators (email, url).</td>
       </tr>
       <tr id="progressSteps">
         <td>
-          <h4>progressSteps</h4><br>
+          <b>progressSteps</b><br>
           <i>[]</i>
         </td>
         <td>Progress steps, useful for queues.</td>
       </tr>
       <tr id="currentProgressStep">
         <td>
-          <h4>currentProgressStep</h4><br>
+          <b>currentProgressStep</b><br>
           <i>undefined</i>
         </td>
         <td>Current active progress step.</td>
       </tr>
       <tr id="progressStepsDistance">
         <td>
-          <h4>progressStepsDistance</h4><br>
+          <b>progressStepsDistance</b><br>
           <i>undefined</i>
         </td>
         <td>Distance between progress steps.</td>
       </tr>
       <tr id="willOpen">
         <td>
-          <h4>willOpen</h4><br>
+          <b>willOpen</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element as the argument.</td>
       </tr>
       <tr id="didOpen">
         <td>
-          <h4>didOpen</h4><br>
+          <b>didOpen</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument.</td>
       </tr>
       <tr id="didRender">
         <td>
-          <h4>didRender</h4><br>
+          <b>didRender</b><br>
           <i>undefined</i>
         </td>
         <td>
@@ -1060,21 +1058,21 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="willClose">
         <td>
-          <h4>willClose</h4><br>
+          <b>willClose</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to another popup being fired). Provides popup DOM element as the argument.</td>
       </tr>
       <tr id="didClose">
         <td>
-          <h4>didClose</h4><br>
+          <b>didClose</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not due to another popup being fired).</td>
       </tr>
       <tr id="didDestroy">
         <td>
-          <h4>didDestroy</h4><br>
+          <b>didDestroy</b><br>
           <i>undefined</i>
         </td>
         <td>
@@ -1084,13 +1082,13 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
     </table>
 
-    <p class="center" id="mixin">
-      You can easily reuse configuration by creating your own <strong>Swal</strong> with <strong>Swal.mixin({ ...options })</strong>:
+    <p class="center">
+      You can easily reuse configuration by creating your own `Swal` with <strong>Swal.mixin({ ...options })</strong>:
     </p>
   </div>
 
   <ul class="examples">
-    <li>
+    <li id="mixin">
       <div class="ui">
         <p>Mixin example</p>
         <button class="show-example-btn" aria-label="Try me! Example: Mixin" onclick="executeExample('mixin')">
@@ -1347,7 +1345,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="urlInput"></pre>
       </td>
       <td>
-        <button class="show-example-btn" aria-label="Try me! Example: input type url" onclick="executeExample('urlInput')">
+        <button class="show-example-btn" onclick="executeExample('urlInput')">
           Try me!
         </button>
       </td>
@@ -1477,7 +1475,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.mixin({ ...options })</i></td>
-        <td>Returns an extended version of <strong>Swal</strong> containing <strong>params</strong> as defaults. Useful for reusing Swal configuration.</td>
+        <td>Returns an extended version of `Swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
       </tr>
       <tr id="update">
         <td><i>Swal.update({ ...options })</i></td>
@@ -1636,7 +1634,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   <!-- Themes -->
   <h3 id="themes"><a href="https://github.com/sweetalert2/sweetalert2-themes" target="_blank">Themes <i class="fa fa-external-link"></i></a></h3>
   <div class="themes center-container">
-    <h4>Dark</h4>
+    <h4> Dark </h4>
     <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/dark" target="_blank">
       <img src="images/themes-dark.png" alt="theme dark">
     </a>
@@ -1727,21 +1725,18 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
   <!-- Sponsors -->
   <h3 id="sponsors">Sponsors</h3>
 
-  <p class="center">
-    For all questions related to sponsorship please contact me via email <a href="mailto:limon.monte@protonmail.com">limon.monte@protonmail.com</a>
-    <div class="sponsors" style="margin: -1.8em auto">
-      <div>
-        <a href="https://github.com/sweetalert2/sweetalert2/blob/master/SPONSORS.md#sponsors" target="_blank" rel="noopener" aria-label="Become a sponsor">
-          <img src="/images/plus.png" alt=""><br>Become a sponsor
-        </a>
-      </div>
-    </div>
-  </p>
+  <p class="center">For all questions related to sponsorship please contact me via email <a href="mailto:limon.monte@protonmail.com">limon.monte@protonmail.com</a></p>
+
+  <div class="banners mobile-hidden">
+    <a href="https://flowcrypt.com/?utm_source=sweetalert2&utm_medium=banner" target="_blank" rel="noopener" aria-label="FlowCrypt">
+      <img src="/images/sponsors/flowcrypt-banner.png" alt="">
+    </a>
+  </div>
 
   <div class="sponsors">
     <div>
-      <a href="https://bestforandroid.com/" target="_blank" rel="noopener" aria-label="Best For Android">
-        <img src="/images/sponsors/bestforandroid.png" alt="Best For Android"><br>Best For Android
+      <a href="https://github.com/sweetalert2/sweetalert2/blob/master/SPONSORS.md" target="_blank" rel="noopener" aria-label="Become a sponsor">
+        <img src="/images/plus.png" alt=""><br>Become a sponsor
       </a>
     </div>
     <div>
@@ -1750,33 +1745,18 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
       </a>
     </div>
     <div>
-      <a href="https://www.vegega.com/" target="_blank" rel="noopener" aria-label="Metal Raised Garden Bed">
-        <img src="/images/sponsors/vegega.jpeg" alt="Metal Raised Garden Bed"><br>Metal Raised Garden Bed
-      </a>
-    </div>
-    <div>
-      <a href="https://www.phatoil.com/" target="_blank" rel="noopener" aria-label="Pure Essential Oil">
-        <img src="/images/sponsors/phatoil.png" alt="Pure Essential Oil"><br>Pure Essential Oil
-      </a>
-    </div>
-    <div>
-      <a href="https://celltrackingapps.com/" target="_blank" rel="noopener" aria-label="Phone Tracking Apps">
-        <img src="/images/sponsors/celltrackingapps.png" alt="Phone Tracking Apps"><br>Phone Tracking Apps
-      </a>
-    </div>
-    <div>
-      <a href="https://www.mybitcoinslots.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="My Bitcoin slots">
-        <img src="/images/sponsors/mybitcoinslots.png" alt="My Bitcoin slots"><br>My Bitcoin slots
-      </a>
-    </div>
-    <div>
-      <a href="https://torcstark.com/" target="_blank" rel="noopener" aria-label="TorcStark">
-        <img src="/images/sponsors/torc-stark.png" alt="TorcStark"><br>TorcStark
-      </a>
-    </div>
-    <div>
       <a href="https://coderubik.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="Code Rubik">
         <img src="/images/sponsors/coderubik.png" alt="Code Rubik"><br>Code Rubik
+      </a>
+    </div>
+    <div>
+      <a href="https://ndchost.com/?utm_campaign=sponsorship&utm_source=github&utm_medium=sweetalert2" target="_blank" rel="noopener" aria-label="NDCHost">
+        <img src="https://www.ndchost.com/logos/ndchost-stacked-256x256-transparent.png" alt="NDCHost"><br>NDCHost
+      </a>
+    </div>
+    <div>
+      <a href="https://bitvape.com.au/" target="_blank" rel="noopener" aria-label="Bitvape">
+        <img src="/images/sponsors/bitvape.png" alt="Bitvape"><br>Bitvape
       </a>
     </div>
     <div>
@@ -1798,110 +1778,40 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
 
   <!-- NSFW Sponsors -->
   <h3 id="nsfw-sponsors">NSFW Sponsors</h3>
-  <p class="center">
-    For all questions related to sponsorship please contact me via email <a href="mailto:limon.monte@protonmail.com">limon.monte@protonmail.com</a>
-    <div class="sponsors" style="margin: -1.8em auto">
-      <div>
-        <a href="https://github.com/sweetalert2/sweetalert2/blob/master/SPONSORS.md#sponsors" target="_blank" rel="noopener" aria-label="Become a sponsor">
-          <img src="/images/plus.png" alt=""><br>Become a sponsor
-        </a>
-      </div>
-    </div>
-  </p>
   <div class="sponsors">
     <div>
-      <a href="https://www.hydoll.com/" target="_blank" rel="noopener" aria-label="hydoll">
-        <img src="/images/sponsors/hydoll.png" alt="hydoll"><br>hydoll
-      </a>
-    </div>
-    <div>
-      <a href="https://www.sexvibrators.in/" target="_blank" rel="noopener" aria-label="Sex Vibrators">
-        <img src="/images/sponsors/sexvibrator.png" alt="Sex Vibrators"><br>Sex Vibrators
-      </a>
-    </div>
-    <div>
-      <a href="https://www.viva-awa.com/" target="_blank" rel="noopener" aria-label="Viva Awa">
-        <img src="/images/sponsors/viva-awa.png" alt="Viva Awa"><br>Viva Awa
-      </a>
-    </div>
-    <div>
-      <a href="https://www.sensualdolls.com" target="_blank" rel="noopener" aria-label="Sensual Dolls">
-        <img src="/images/sponsors/sensualdolls.png" alt="Sensual Dolls"><br>Sensual Dolls
-      </a>
-    </div>
-    <div>
-      <a href="https://www.bestrealdoll.com/collections/us-warehouse" target="_blank" rel="noopener" aria-label="BestRealDoll">
-        <img src="/images/sponsors/bestrealdoll.jpeg" alt="BestRealDoll"><br>BestRealDoll
-      </a>
-    </div>
-    <div>
-      <a href="https://www.sexdolltech.com/product-category/us-warehouse/" target="_blank" rel="noopener" aria-label="SexDollTech">
-        <img src="/images/sponsors/sexdolltech.jpeg" alt="SexDollTech"><br>SexDollTech
-      </a>
-    </div>
-    <div>
-      <a href="https://rosewives.com/" target="_blank" rel="noopener" aria-label="Rose Wives">
-        <img src="/images/sponsors/rosewives.png" alt="Rose Wives"><br>Rose Wives
-      </a>
-    </div>
-    <div>
-      <a href="https://vsdoll.com/" target="_blank" rel="noopener" aria-label="VSDoll">
-        <img src="/images/sponsors/vsdoll.png" alt="VSDoll"><br>VSDoll
-      </a>
-    </div>
-    <div>
-      <a href="https://www.sexdollsoff.com/" target="_blank" rel="noopener" aria-label="SexDollsOff">
-        <img src="/images/sponsors/sexdollsoff.png" alt="YourDoll"><br>SexDollsOff
-      </a>
-    </div>
-    <div>
-      <a href="https://realsexdoll.com/" target="_blank" rel="noopener" aria-label="RealSexDoll">
-        <img src="/images/sponsors/realsexdoll.png" alt="YourDoll"><br>RealSexDoll
-      </a>
-    </div>
-    <div>
-      <a href="https://www.yourdoll.com/" target="_blank" rel="noopener" aria-label="YourDoll">
-        <img src="/images/sponsors/yourdoll.jpg" alt="YourDoll"><br>YourDoll
-      </a>
-    </div>
-    <div>
-      <a href="https://anniesdollhouse.com/" target="_blank" rel="noopener" aria-label="Annie's Dollhouse">
-        <img src="/images/sponsors/annies-dollhouse.png" alt="Annie's Dollhouse"><br>Annie's Dollhouse
-      </a>
-    </div>
-    <div>
-      <a href="https://sexdollcenter.vip/" target="_blank" rel="noopener" aria-label="Sex Doll Center">
-        <img src="/images/sponsors/sexdollcenter.png" alt="Sex Doll Center"><br>Sex Doll Center
-      </a>
-    </div>
-    <div>
-      <a href="https://sexangelbaby.com/" target="_blank" rel="noopener" aria-label="SexAngelbaby">
-        <img src="/images/sponsors/sexangelbaby.png" alt="SexAngelbaby"><br>SexAngelbaby
-      </a>
-    </div>
-    <div>
-      <a href="https://theadulttoyfinder.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="The Adult Toy Finder">
-        <img src="/images/sponsors/theadulttoyfinder.png" alt="The Adult Toy Finder"><br>The Adult Toy Finder
+      <a href="https://mailovedoll.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="Mailovedoll">
+        <img src="/images/sponsors/mailove.png" alt=""><br>Mailovedoll
       </a>
     </div>
     <div>
       <a href="https://www.thefreshmaterials.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="Fresh Materials">
-        <img src="/images/sponsors/fresh-materials.png" alt="Fresh Materials"><br>Fresh Materials
+        <img src="/images/sponsors/fresh-materials.png" alt=""><br>Fresh Materials
+      </a>
+    </div>
+    <div>
+      <a href="https://www.joylovedolls.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="Joy Love Dolls">
+        <img src="/images/sponsors/joylovedolls.png" alt=""><br>Joy Love Dolls
+      </a>
+    </div>
+    <div>
+      <a href="https://sextoyeducation.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="STED">
+        <img src="/images/sponsors/sex-toy-education.png" alt=""><br>STED
       </a>
     </div>
     <div>
       <a href="https://www.mysextoyguide.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="My Sex Toy Guide">
-        <img src="/images/sponsors/my-sex-toy-guide.jpg" alt="My Sex Toy Guide"><br>My Sex Toy Guide
+        <img src="/images/sponsors/my-sex-toy-guide.jpg" alt=""><br>My Sex Toy Guide
       </a>
     </div>
     <div>
       <a href="https://www.bestblowjobmachines.com/?utm_source=sweetalert2&utm_medium=logo" target="_blank" rel="noopener" aria-label="Best Blowjob Machines">
-        <img src="/images/sponsors/best-blowjob-machines.jpg" alt="Best Blowjob Machines"><br>Best Blowjob <br> Machines
+        <img src="/images/sponsors/best-blowjob-machines.jpg" alt=""><br>Best Blowjob <br> Machines
       </a>
     </div>
     <div>
       <a href="https://sextoycollective.com/" target="_blank" rel="noopener" aria-label="STC">
-        <img src="/images/sponsors/sextoycollective.jpg" alt="STC"><br>STC
+        <img src="/images/sponsors/sextoycollective.jpg" alt=""><br>STC
       </a>
     </div>
     <div>
@@ -1927,7 +1837,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
   <div id="native-js-footer"></div>
 
   <!-- GitHub corner -->
-  <a href="https://github.com/sweetalert2/sweetalert2" class="github-corner" aria-label=" GitHub" tabindex="-1"><svg width="80" height="80" viewBox="0 0 250 250" style=" position: absolute; top: 0; right: 0; border: 0; fill: #151513; color: #fff;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+  <a href="https://github.com/sweetalert2/sweetalert2" class="github-corner" tabindex="-1"><svg width="80" height="80" viewBox="0 0 250 250" style=" position: absolute; top: 0; right: 0; border: 0; fill: #151513; color: #fff;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
 
   @keyframes octocat-wave {
     0%,
@@ -1951,16 +1861,5 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
     <input type="hidden" name="data" id="codepen-data">
   </form>
   <script src="/dist/bundle.js" defer></script>
-
-  <div id="docsearch"></div>
-  <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
-  <script>
-    docsearch({
-      appId: '38BPOKYOZ2',
-      apiKey: 'aa152d345260f94e9c0b177ed5437c9e',
-      indexName: 'sweetalert2',
-      container: '#docsearch',
-    });
-  </script>
 </body>
 </html>

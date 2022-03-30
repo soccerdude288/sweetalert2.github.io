@@ -18,7 +18,7 @@ Swal.fire({
       'Toggle' +
     '</button>',
   timer: 10000,
-  didOpen: () => {
+  willOpen: () => {
     const content = Swal.getHtmlContainer()
     const $ = content.querySelector.bind(content)
 

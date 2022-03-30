@@ -64,7 +64,7 @@ module.exports = {
       title: 'Do you want to save the changes?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: `Save`,
       denyButtonText: `Don't save`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -162,10 +162,9 @@ module.exports = {
   },
   customWidth () {
     Swal.fire({
-      title: 'Custom width, padding, color, background.',
+      title: 'Custom width, padding, background.',
       width: 600,
       padding: '3em',
-      color: '#716add',
       background: '#fff url(/images/trees.png)',
       backdrop: `
         rgba(0,0,123,0.4)
@@ -184,9 +183,14 @@ module.exports = {
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
-        const b = Swal.getHtmlContainer().querySelector('b')
         timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft()
+          const content = Swal.getHtmlContainer()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
         }, 100)
       },
       willClose: () => {

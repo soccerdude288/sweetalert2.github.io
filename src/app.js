@@ -1,5 +1,5 @@
 /* global MutationObserver, fetch, _bsa */
-import hljs from 'highlight.js/lib/core'
+import hljs from 'highlight.js/lib/core.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
 import showSidebar from './sidebar'
@@ -58,9 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('/styles/carbon-ads.css')
   loadStyleSheet('/styles/native-js.css')
   loadStyleSheet('/styles/bootstrap4-buttons.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/@docsearch/css@alpha')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4.0.0/animate.min.css')
 
   const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
   themes.forEach((theme) => {
@@ -375,6 +374,12 @@ if ($('#theme')) {
 if ($('#version')) {
   $('#version').addEventListener('change', () => {
     switch ($('#version').value) {
+      case '7.x':
+        window.location.assign('v7.html')
+        break
+      case '8.x':
+        window.location.assign('v8.html')
+        break
       case '9.x':
         window.location.assign('v9.html')
         break

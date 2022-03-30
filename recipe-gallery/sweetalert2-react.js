@@ -1,10 +1,9 @@
-window.showExample = async () => {
-const withReactContent = window.sweetalert2ReactContent
-const MySwal = withReactContent(Swal)
+window.showExample = () => {
+const MySwal = window.sweetalert2ReactContent(Swal)
 
-await MySwal.fire({
-  title: <strong>Good job!</strong>,
-  html: <i>You clicked the button!</i>,
-  icon: 'success'
+MySwal.fire({
+  title: <p>Hello World</p>,
+}).then(() => {
+  return MySwal.fire(<p>Shorthand works too</p>)
 })
 }
